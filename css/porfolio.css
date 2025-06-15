@@ -1,0 +1,394 @@
+/* Base styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fffdf7;
+    color: #333;
+    scroll-behavior: smooth;
+  }
+  
+  /* Header */
+  header {
+    background-color: #ff6f00;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid #fff3e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Navigation */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff3e0;
+    border-bottom: 2px solid #ffe0b2;
+    gap: 30px;
+    padding: 14px;
+  }
+  
+  nav a {
+    color: #ff6f00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #e65100;
+    text-decoration: underline;
+  }
+  
+  /* Sections */
+  section {
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 0 20px;
+    animation: slideUp 1s ease;
+  }
+  
+  h2 {
+    border-bottom: 2px solid #ff6f00;
+    padding-bottom: 6px;
+    margin-bottom: 25px;
+    color: #e65100;
+    font-size: 1.8rem;
+  }
+  
+  /* Project Cards */
+  .project-card {
+    background: #fff8ef;
+    border: 1px solid #ffe0b2;
+    padding: 18px;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .project-card:hover,
+  .project-card:focus {
+    background: #ffe0b2;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    outline: none;
+  }
+  
+  .project-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Skills List */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    background: #fff3e0;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-left: 5px solid #ff6f00;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  /* Contact Links */
+  #contact a {
+    color: #e65100;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  #contact a:hover {
+    color: #bf360c;
+    text-decoration: underline;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    margin: 8% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #ff6f00;
+    transition: color 0.3s ease;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bf360c;
+    outline: none;
+  }
+  
+  /* Modal video iframe */
+  .modal-content iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  /* Show modal */
+  .modal[style*="display: block"] {
+    display: flex;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Accessibility focus styles */
+  .project-card:focus {
+    outline: 3px solid #ff6f00;
+    outline-offset: 3px;
+  }
+  
+  /* Header Section */
+.header-animated {
+  text-align: center;
+  background: linear-gradient(180deg, #ff6600, #ff3300);
+  color: white;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image and Glow Ring */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  animation: fadeIn 3s ease-out forwards;
+  opacity: 0;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glow ring behind the image */
+/* Neon Glow Ring - Bright Neon Circle Light Animation */
+.glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(
+    #ff007f,
+    #ff6600,
+    #ffee00,
+    #00ffc3,
+    #007bff,
+    #a100ff,
+    #ff007f
+  );
+  filter: blur(70px);
+  z-index: 1;
+  opacity: 1;
+  animation: rotateGlow 10s linear infinite;
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes rotateGlow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Glitch Text for Name */
+.glitch-text {
+  font-size: 2.4rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  animation: glitchFade 3s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes glitchFade {
+  to {
+    opacity: 1;
+  }
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glitch-text::before {
+  color:rgb(247, 235, 235);
+  animation: glitchBefore 2s infinite linear alternate;
+}
+
+.glitch-text::after {
+  color:rgb(228, 170, 10);
+  animation: glitchAfter 2s infinite linear alternate;
+}
+
+@keyframes glitchBefore {
+  0%, 100% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(10px, 9999px, 50px, 0); }
+  30% { clip: rect(20px, 9999px, 60px, 0); }
+}
+
+@keyframes glitchAfter {
+  0%, 100% { clip: rect(0, 9999px, 0, 0); }
+  20% { clip: rect(10px, 9999px, 25px, 0); }
+  40% { clip: rect(25px, 9999px, 70px, 0); }
+}
+
+/* Fade-up Subtitle */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 3s ease-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+
+.project-card {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.project-card h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #333;
+}
+
+.figma-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff6600;
+  transition: color 0.3s ease;
+}
+
+.figma-link:hover {
+  color: #ff007f;
+}
+
+.figma-icon {
+  display: inline-block;
+  animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(6deg);
+  }
+  75% {
+    transform: rotate(-6deg);
+  }
+}
+
